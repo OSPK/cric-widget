@@ -5,7 +5,7 @@ $allurl = $api;
 
 if (isset($_GET['id'])) {
 	$matchid = $_GET['id'];
-	$matchurl = $api . "/?id=$matchid";
+	$matchurl = $api . "?id=$matchid";
 }
 
 function match_content() {
