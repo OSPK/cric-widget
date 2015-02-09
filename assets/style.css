@@ -65,7 +65,7 @@ section {
 	border-radius: 2px;
 	padding:20px;
 	overflow: hidden;
-	background-image: url('assets/bg.png');
+	background-image: url('bg.png');
 	background-position: right bottom;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -104,7 +104,7 @@ strong {
 /** COOL STYLINGS ==============================================================>
 **/
 .styled-select {
-   background: url(assets/15xvbd5.png) no-repeat 96% 0;
+   background: url(15xvbd5.png) no-repeat 96% 0;
    height: 29px;
    overflow: hidden;
    -webkit-border-radius: 5px;
