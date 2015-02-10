@@ -69,6 +69,7 @@ section {
 	background-position: right bottom;
 	background-size: contain;
 	background-repeat: no-repeat;
+	position: relative;
 }
 .widheader {
 	position: relative;
@@ -99,6 +100,16 @@ h2.score {
 
 strong {
 	font-weight: 400;
+}
+
+.refresh {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+
+.refresh img {
+	margin-bottom: -10px;
 }
 
 /** COOL STYLINGS ==============================================================>

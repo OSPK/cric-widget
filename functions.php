@@ -25,6 +25,7 @@ function match_content() {
 		foreach ($obj as $match) {
 			echo "<h1 class='title'>$match->si</h1><br>";
 			echo "<h2 class='score'>$match->de</h2>";
+			echo "<a class='refresh' href='javascript:location.reload(true)'><img width='30px' src='/assets/reload.png'><strong>Refresh</strong></a>";
 		}
 	}
 }
