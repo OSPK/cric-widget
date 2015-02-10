@@ -65,7 +65,7 @@ section {
 	border-radius: 2px;
 	padding:20px;
 	overflow: hidden;
-	background-image: url('assets/bg.png');
+	background-image: url('/assets/bg.png');
 	background-position: right bottom;
 	background-size: contain;
 	background-repeat: no-repeat;
