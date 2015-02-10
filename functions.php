@@ -1,5 +1,6 @@
 <?php
-$api = "http://cric.dev/api.php";
+$server = $_SERVER['HTTP_HOST'];
+$api = "http://". $server . "/api.php";
 
 $allurl = $api;
 
