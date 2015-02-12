@@ -1,7 +1,7 @@
 <?php
 $server = $_SERVER['HTTP_HOST'];
 
-$url = "http://". $server . "/matches.json";
+$url = "http://". $server . "/data/matches.json";
 $json = file_get_contents($url);				
 $obj = json_decode($json);
 echo "<h1>MATCHES</h1>";
@@ -14,7 +14,7 @@ $numbers = [0,1,2,3,4];
 
 foreach ($numbers as $number) {
 
-	$url = "http://". $server . "/$number.json";
+	$url = "http://". $server . "/data/$number.json";
 	$json = file_get_contents($url);				
 	$obj = json_decode($json);
 	echo "<h1>$number</h1>";

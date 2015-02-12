@@ -27,7 +27,7 @@ if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
 			<?php 
 			if (!isset($_GET['match'])) {
 				$server = $_SERVER['HTTP_HOST'];
-				$url = "http://". $server . "/matches.json";
+				$url = "http://". $server . "/data/matches.json";
 				$json = file_get_contents($url);				
 				$obj = json_decode($json);
 				$matches = $obj->query->results->Match;
@@ -48,7 +48,7 @@ if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
 			if (isset($_GET['match'])) {
 					$m_id = $_GET['match']; 
 					$server = $_SERVER['HTTP_HOST'];
-					$url = "http://". $server . "/$m_id.json";
+					$url = "http://". $server . "/data/$m_id.json";
 					$json = file_get_contents($url);
 					$obj = json_decode($json);
 					$scores = $obj->query->results->Scorecard;

@@ -5,7 +5,7 @@ if (isset($_GET['write'])=='go') {
 	$json = file_get_contents($url);
 	$obj = json_decode($json);
 
-	$file = fopen("matches.json","w");
+	$file = fopen("data/matches.json","w");
 	echo fwrite($file,$json);
 	fclose($file);
 	echo "<br>Written to matches.json: <br><pre>";
@@ -21,7 +21,7 @@ if (isset($_GET['write'])=='go') {
 		$url_m = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20cricket.scorecard.summary%20where%20match_id%3D$m_id&format=json&env=store%3A%2F%2F0TxIGQMQbObzvU4Apia0V0&callback=";
 		$json_m = file_get_contents($url_m);
 		$obj_m = json_decode($json_m);
-		$filename = $our_id . ".json";
+		$filename = "data/" . $our_id . ".json";
 		$file_m = fopen($filename,"w");
 		echo fwrite($file_m,$json_m);
 		fclose($file_m);
