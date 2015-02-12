@@ -44,6 +44,7 @@ include_once "2functions.php";
 
 			if (isset($_GET['match'])) {
 					$m_id = $_GET['match']; 
+					$server = $_SERVER['HTTP_HOST'];
 					$url = "http://". $server . "/$m_id.json";
 					$json = file_get_contents($url);
 					$obj = json_decode($json);
