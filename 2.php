@@ -33,9 +33,9 @@ include_once "2functions.php";
 					$team1 = $match->Team[1];
 					$gotdate = strtotime($match->StartDate)-6*60*60;
 					$date = date('H:ia d M', $gotdate);
-					echo "$date <br>
-					<span>  </span>
-					<a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . '</a><br>';
+					echo "<a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . "</a><br>
+					<span class='date'>$date</span><br><br>
+					";
 				}
 			}
 
