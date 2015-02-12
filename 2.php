@@ -31,9 +31,10 @@ include_once "2functions.php";
 				foreach ($matches as $match) {
 					$team0 = $match->Team[0];
 					$team1 = $match->Team[1];
-					
-					echo "<br>
-					<span> $match->StartDate </span>
+					$gotdate = strtotime($match->StartDate);
+					$date = date('m-d H:i', $gotdate);
+					echo "$date <br>
+					<span>  </span>
 					<a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . '</a><br>';
 				}
 			}
