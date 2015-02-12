@@ -9,7 +9,7 @@ fclose($file);
 echo "<br>Written to matches.json: <br><pre>";
 print_r($obj); echo "</pre><br><br>";
 				
-
+echo "======================================================<br>==============<br>=======";
 $matches = $obj->query->results->Match;
 
 $our_id = 0;
@@ -25,8 +25,8 @@ foreach ($matches as $match) {
 	fclose($file_m);
 	echo "<br>Written to $our_id.json: <br><pre>";
 	print_r($obj_m); echo "</pre><br><br>";
-
 	$our_id++;
+	echo "=======================<br>==============<br>=======";
 }
 
 ?>
