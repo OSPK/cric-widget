@@ -28,25 +28,26 @@ include_once "2functions.php";
 				$json = file_get_contents($url);				
 				$obj = json_decode($json);
 				$matches = $obj->query->results->Match;
-				//$obj = array_slice($obj, 0,4);
+				
+				$our_id = 0;
 				foreach ($matches as $match) {
 					$team0 = $match->Team[0];
 					$team1 = $match->Team[1];
 					$gotdate = strtotime($match->StartDate)-6*60*60;
 					$date = date('H:ia d M', $gotdate);
-					echo "<a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . "</a><br>
+					echo "<a href='?match=$our_id'>" . $team0->Team . " vs " . $team1->Team . "</a><br>
 					<span class='date'>$date</span><br><br>
 					";
+					$our_id++;
 				}
 			}
 
 			if (isset($_GET['match'])) {
 					$m_id = $_GET['match']; 
-					$url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20cricket.scorecard.summary%20where%20match_id%3D$m_id&format=json&env=store%3A%2F%2F0TxIGQMQbObzvU4Apia0V0&callback=";
+					$url = "http://". $server . "/$m_id.json";
 					$json = file_get_contents($url);
 					$obj = json_decode($json);
 					$scores = $obj->query->results->Scorecard;
-					//$obj = array_slice($obj, 0,4);
 
 					$a_team = $scores->teams[0];
 					$flag = $a_team->flag;
