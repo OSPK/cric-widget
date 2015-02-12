@@ -32,7 +32,9 @@ include_once "2functions.php";
 					$team0 = $match->Team[0];
 					$team1 = $match->Team[1];
 					
-					echo "<br><a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . '</a><br>';
+					echo "<br>
+					<span> $match->StartDate </span>
+					<a href='?match=$match->matchid'>" . $team0->Team . " vs " . $team1->Team . '</a><br>';
 				}
 			}
 
