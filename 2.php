@@ -1,5 +1,7 @@
 <?php 
-include_once "2functions.php";
+$server = $_SERVER['HTTP_HOST'];
+$this_match = null;
+if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -7,6 +9,7 @@ include_once "2functions.php";
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="refresh" content="10; url=http://<?php echo $server . '/2.php?' . $this_match; ?>" />
 		<title>Cric Widget</title>
 		<!--CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
