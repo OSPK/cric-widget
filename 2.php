@@ -1,5 +1,10 @@
 <?php 
 $server = $_SERVER['HTTP_HOST'];
+
+$url = "http://". $server . "/data/live.json";
+$json = file_get_contents($url);
+$obj = json_decode($json);
+
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -19,15 +24,10 @@ $server = $_SERVER['HTTP_HOST'];
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body <?php if (isset($_GET['match'])) {echo "onload='parent.document.title=document.title'";} ?>>
+	<body <?php if ($obj->query->count==1) {echo "onload='parent.document.title=document.title'";} ?>>
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
 			<?php 
-
-				$server = $_SERVER['HTTP_HOST'];
-				$url = "http://". $server . "/data/live.json";
-				$json = file_get_contents($url);
-				$obj = json_decode($json);
 
 				if ($obj->query->count==1) {
 					
@@ -88,7 +88,7 @@ $server = $_SERVER['HTTP_HOST'];
 				elseif ($obj->query->count==0) {
 
 					echo "<h2>Upcoming Matches</h2>";
-					$server = $_SERVER['HTTP_HOST'];
+
 					$url = "http://". $server . "/data/matches.json";
 					$json = file_get_contents($url);				
 					$obj = json_decode($json);
