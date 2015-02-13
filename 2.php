@@ -57,22 +57,24 @@ $obj = json_decode($json);
 						$the_scores_b = $scores->past_ings[1];
 					}
 					$the_scores_a = $scores->past_ings;
-					
-					//Score for Team A
-					$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
-						. $the_scores_a->s->a->o . ") ";
-					echo "<img src='$flag_a->roundsmall'> ";
-					echo $a_team->fn . ": <span class='score'>" . $scorecard_a . "</span>";
 
-					echo "<br><br>";
-					//Score for Team B
-					$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
-						. $the_scores_b->s->a->o . ") ";
-					if ($the_scores_b->s->a->r=='') {
-						$scorecard_b = 'Bowling';
-					}
-					echo "<img src='$flag_b->roundsmall'> ";
-					echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
+					echo "<div class='scorecard'>";					
+						//Score for Team A
+						$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
+							. $the_scores_a->s->a->o . ") ";
+						echo "<img src='$flag_a->roundsmall'> ";
+						echo $a_team->fn . ": <span class='score'>" . $scorecard_a . "</span>";
+
+						echo "<br><br>";
+						//Score for Team B
+						$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
+							. $the_scores_b->s->a->o . ") ";
+						if ($the_scores_b->s->a->r=='') {
+							$scorecard_b = 'Bowling';
+						}
+						echo "<img src='$flag_b->roundsmall'> ";
+						echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
+					echo "</div>";
 
 					if (isset($result->winner)) {
 						echo "<br><br><h2 class='h2'><strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
@@ -85,6 +87,7 @@ $obj = json_decode($json);
 					if ($the_scores_b->s->stay_live=='Yes') {
 						$pagetitle = $b_team->sn . " " . $scorecard_b;
 					}
+
 
 				}
 
