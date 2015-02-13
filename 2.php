@@ -71,8 +71,8 @@ function exis($var) {
 							$flag_a = $a_team->flag;
 							$flag_b = $b_team->flag;
 
-							echo "<img src='$flag_a->roundsmall'> <span class='h1'>" . $a_team->fn . " <strong>vs</strong> " . $b_team->fn . "</span> <img src='$flag_b->roundsmall'><br><br>";	
-							
+							echo "<img src='$flag_a->roundsmall'> <span class='h1'>" . $a_team->fn . " <strong>vs</strong> " . $b_team->fn . "</span> <img src='$flag_b->roundsmall'><br>";	
+							echo "<span class='status'>$scores->ms</span><br><br>";
 							$the_scores_a = exis($scores->past_ings[0]);
 							$the_scores_b = exis($scores->past_ings[1]);
 							
