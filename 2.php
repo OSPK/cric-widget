@@ -12,7 +12,7 @@ $obj = json_decode($json);
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="refresh" content="10; url=http://<?php echo $server . '/2.php'; ?>">
+		<!--meta http-equiv="refresh" content="10; url=http://<?php echo $server . '/2.php'; ?>" -->
 		<!--CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 		<link href="assets/style.css" rel="stylesheet">
@@ -27,6 +27,7 @@ $obj = json_decode($json);
 	<body <?php if ($obj->query->count==1) {echo "onload='parent.document.title=document.title'";} ?>>
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
+		<div id="widcontent">
 			<?php 
 
 				if ($obj->query->count==1) {
@@ -113,10 +114,19 @@ $obj = json_decode($json);
 					}
 				}
 			?>
+		</div>
 		</section>
 
 		<!-- jQuery -->
-		<!--script src="//code.jquery.com/jquery.js"></script-->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script>
+		    $(document).ready(
+		            function() {
+		                setInterval(function() {
+		                    $('#widcontent');
+		                }, 3000);
+		            });
+		</script>
 		<?php if ($obj->query->count==1) { ?>
 			<script>
 				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
