@@ -111,7 +111,7 @@ $obj = json_decode($json);
 
 		<!-- jQuery -->
 		<!--script src="//code.jquery.com/jquery.js"></script-->
-		<?php if (isset($_GET['match'])) { ?>
+		<?php if ($obj->query->count==1) { ?>
 			<script>
 				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
 			</script>
