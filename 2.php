@@ -62,11 +62,16 @@ function exis($var) {
 							$obj = json_decode($json);
 							$scores = $obj->query->results->Scorecard;
 
+							$result = $scores->result;
+
 							$a_team = $scores->teams[0];
 							$b_team = $scores->teams[1];
 
 							$a_id = $a_team->i;
 							$b_id = $b_team->i;
+
+							${$a_id} = $a_team->fn;
+							${$b_id} = $b_team->fn;
 
 							$flag_a = $a_team->flag;
 							$flag_b = $b_team->flag;
@@ -88,9 +93,11 @@ function exis($var) {
 								. $the_scores_b->s->a->o . ") ";
 							echo "<img src='$flag_b->roundsmall'> ";
 							echo $b_team->fn . ": " . $scorecard_b;
+
+							if (isset($result->winner)) {
+								echo "<br><br>Match won by ${$result->winner} by $result->by $result->how";
+							}							
 							
-
-
 
 							$pagetitle = $a_team->sn;
 					}
