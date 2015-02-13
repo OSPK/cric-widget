@@ -61,7 +61,7 @@ body {
 section {
 	width:300px;
 	height: 270px;
-	background-color:#5BDA8D;
+	background-color:#E9F4E4;
 	border-radius: 2px;
 	padding:20px;
 	overflow: hidden;
@@ -122,6 +122,14 @@ strong {
 
 .score {
 	font-weight: bold;
+}
+
+.match-title {
+	text-align: center;
+}
+
+.match-title img {
+	margin-bottom: -7px;
 }
 
 /** COOL STYLINGS ==============================================================>

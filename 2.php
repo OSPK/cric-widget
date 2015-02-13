@@ -15,7 +15,7 @@ function exis($var) {
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php if (isset($_GET['match'])) { ?>
-			<meta http-equiv="refresh" content="15; url=http://<?php echo $server . '/2.php?' . $this_match; ?>" />
+			<!--meta http-equiv="refresh" content="15; url=http://<?php echo $server . '/2.php?' . $this_match; ?>" /-->
 		<?php } ?>
 		<!--CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -73,11 +73,14 @@ function exis($var) {
 							${$a_id} = $a_team->fn;
 							${$b_id} = $b_team->fn;
 
-							$flag_a = $a_team->flag;
-							$flag_b = $b_team->flag;
+							$flag_a = $a_team->flag; $logo_a = $a_team->logo;
+							$flag_b = $b_team->flag; $logo_b = $b_team->logo;
 
-							echo "<img src='$flag_b->roundsmall'> <span class='h1'>" . $b_team->fn . " <strong>vs</strong> " . $a_team->fn . "</span> <img src='$flag_a->roundsmall'><br>";	
-							echo "<span class='status'>$scores->ms</span><br><br>";
+							echo "<div class='match-title'>";
+								echo "<img src='$flag_b->roundstd'> <span class='h1'>" . $b_team->fn . " <br><strong>vs</strong><br> " . $a_team->fn . "</span> <img src='$flag_a->roundstd'><br>";	
+								echo "<span class='status'>$scores->ms</span><br><br>";
+							echo "</div>";
+
 							$the_scores_a = $scores->past_ings[0];
 							$the_scores_b = $scores->past_ings[1];
 							
@@ -95,7 +98,7 @@ function exis($var) {
 							echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
 
 							if (isset($result->winner)) {
-								echo "<br><br>Match won by ${$result->winner} by $result->by $result->how";
+								echo "<br><br><h2><strong>Result</strong>: <strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
 							}							
 							
 							if ($the_scores_a->s->stay_live=='Yes') {
