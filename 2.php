@@ -58,7 +58,7 @@ function exis($var) {
 					if (isset($_GET['match'])) {
 							$m_id = $_GET['match']; 
 							$server = $_SERVER['HTTP_HOST'];
-							$url = "http://". $server . "/data/$m_id.json";
+							$url = "http://". $server . "/data/live.json";
 							$json = file_get_contents($url);
 							$obj = json_decode($json);
 							$scores = $obj->query->results->Scorecard;
@@ -78,7 +78,7 @@ function exis($var) {
 							$flag_b = $b_team->flag; $logo_b = $b_team->logo;
 
 							echo "<div class='match-title'>";
-								echo "<img src='$flag_b->roundstd'> <span class='h1'>" . $b_team->fn . " <br><strong>vs</strong><br> " . $a_team->fn . "</span> <img src='$flag_a->roundstd'><br>";	
+								echo "<img src='$flag_b->std'> <span class='h1'>" . $b_team->fn . " <br><strong>vs</strong><br> " . $a_team->fn . "</span> <img src='$flag_a->std'><br>";	
 								echo "<br><span class='status'>$scores->ms</span><br><br>";
 							echo "</div>";
 
