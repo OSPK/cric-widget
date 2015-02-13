@@ -45,8 +45,8 @@ function exis($var) {
 						foreach ($matches as $match) {
 							$team0 = $match->Team[0];
 							$team1 = $match->Team[1];
-							$gotdate = strtotime($match->StartDate)-6*60*60;
-							$date = date('H:ia d M', $gotdate);
+							$gotdate = strtotime($match->StartDate);
+							$date = date('H:iA d M', $gotdate);
 							echo "<a href='?match=$our_id'>" . $team0->Team . " vs " . $team1->Team . "</a><br>
 							<span class='date'>$date</span><br><br>
 							";
