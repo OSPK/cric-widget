@@ -120,6 +120,10 @@ strong {
 	color:rgba(250,100,100,1);
 }
 
+.score {
+	font-weight: bold;
+}
+
 /** COOL STYLINGS ==============================================================>
 **/
 .styled-select {

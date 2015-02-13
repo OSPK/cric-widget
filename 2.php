@@ -78,28 +78,35 @@ function exis($var) {
 
 							echo "<img src='$flag_b->roundsmall'> <span class='h1'>" . $b_team->fn . " <strong>vs</strong> " . $a_team->fn . "</span> <img src='$flag_a->roundsmall'><br>";	
 							echo "<span class='status'>$scores->ms</span><br><br>";
-							$the_scores_a = exis($scores->past_ings[0]);
-							$the_scores_b = exis($scores->past_ings[1]);
+							$the_scores_a = $scores->past_ings[0];
+							$the_scores_b = $scores->past_ings[1];
 							
 							//Score for Team A
 							$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
 								. $the_scores_a->s->a->o . ") ";
 							echo "<img src='$flag_a->roundsmall'> ";
-							echo $a_team->fn . ": " . $scorecard_a;
+							echo $a_team->fn . ": <span class='score'>" . $scorecard_a . "</span>";
 
 							echo "<br><br>";
 							//Score for Team B
 							$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
 								. $the_scores_b->s->a->o . ") ";
 							echo "<img src='$flag_b->roundsmall'> ";
-							echo $b_team->fn . ": " . $scorecard_b;
+							echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
 
 							if (isset($result->winner)) {
 								echo "<br><br>Match won by ${$result->winner} by $result->by $result->how";
 							}							
 							
+							if ($the_scores_a->s->stay_live=='Yes') {
+								$pagetitle = $a_team->sn . " " . $scorecard_a;
+							}
 
-							$pagetitle = $a_team->sn;
+							if ($the_scores_b->s->stay_live=='Yes') {
+								$pagetitle = $b_team->sn . " " . $scorecard_b;
+							}
+
+							
 					}
 				}
 
