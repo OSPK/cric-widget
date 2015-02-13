@@ -68,6 +68,9 @@ $obj = json_decode($json);
 					//Score for Team B
 					$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
 						. $the_scores_b->s->a->o . ") ";
+					if ($the_scores_b->s->a->r=='') {
+						$scorecard_b = 'Bowling';
+					}
 					echo "<img src='$flag_b->roundsmall'> ";
 					echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
 
