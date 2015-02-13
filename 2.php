@@ -7,6 +7,7 @@ function exis($var) {
 
 	if (isset($var)) {return $var;}
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -78,7 +79,7 @@ function exis($var) {
 
 							echo "<div class='match-title'>";
 								echo "<img src='$flag_b->roundstd'> <span class='h1'>" . $b_team->fn . " <br><strong>vs</strong><br> " . $a_team->fn . "</span> <img src='$flag_a->roundstd'><br>";	
-								echo "<span class='status'>$scores->ms</span><br><br>";
+								echo "<br><span class='status'>$scores->ms</span><br><br>";
 							echo "</div>";
 
 							$the_scores_a = $scores->past_ings[0];
@@ -98,7 +99,7 @@ function exis($var) {
 							echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
 
 							if (isset($result->winner)) {
-								echo "<br><br><h2><strong>Result</strong>: <strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
+								echo "<br><br><h2 class='h2'><strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
 							}							
 							
 							if ($the_scores_a->s->stay_live=='Yes') {
@@ -122,7 +123,7 @@ function exis($var) {
 		</section>
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
+		<!--script src="//code.jquery.com/jquery.js"></script-->
 		<?php if (isset($_GET['match'])) { ?>
 			<script>
 				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
