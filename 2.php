@@ -33,7 +33,7 @@ function exis($var) {
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
 			<?php 
-			
+
 				$server = $_SERVER['HTTP_HOST'];
 				$url = "http://". $server . "/data/live.json";
 				$json = file_get_contents($url);
@@ -62,8 +62,11 @@ function exis($var) {
 						echo "<br><span class='status'>$scores->ms</span><br><br>";
 					echo "</div>";
 
-					$the_scores_a = $scores->past_ings[0];
-					$the_scores_b = $scores->past_ings[1];
+					if (is_array($scores->past_ings)) {
+						$the_scores_a = $scores->past_ings[0];
+						$the_scores_b = $scores->past_ings[1];
+					}
+					$the_scores_a = $scores->past_ings;
 					
 					//Score for Team A
 					$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
