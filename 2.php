@@ -2,6 +2,11 @@
 $server = $_SERVER['HTTP_HOST'];
 $this_match = null;
 if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
+
+function exis($var) {
+
+	if (isset($var)) {return $var;}
+}
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -27,7 +32,7 @@ if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
 			<?php 
-				if (isset($_GET['yes'])) {
+				if ( isset($_GET['yes']) || isset($_GET['match'])) {
 
 					if (!isset($_GET['match'])) {
 						$server = $_SERVER['HTTP_HOST'];
@@ -59,12 +64,31 @@ if (isset($_GET['match'])) {$this_match='match=' . $_GET['match'];}
 
 							$a_team = $scores->teams[0];
 							$b_team = $scores->teams[1];
+
+							$a_id = $a_team->i;
+							$b_id = $b_team->i;
+
 							$flag_a = $a_team->flag;
 							$flag_b = $b_team->flag;
+
 							echo "<img src='$flag_a->roundsmall'> <span class='h1'>" . $a_team->fn . " <strong>vs</strong> " . $b_team->fn . "</span> <img src='$flag_b->roundsmall'><br><br>";	
 							
-							$the_scores_a = $scores->past_ings[0];
-							echo $the_scores_a->s->a->r;
+							$the_scores_a = exis($scores->past_ings[0]);
+							$the_scores_b = exis($scores->past_ings[1]);
+							
+							//Score for Team A
+							$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
+								. $the_scores_a->s->a->o . ") ";
+							echo "<img src='$flag_a->roundsmall'> ";
+							echo $a_team->fn . ": " . $scorecard_a;
+
+							echo "<br><br>";
+							//Score for Team B
+							$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
+								. $the_scores_b->s->a->o . ") ";
+							echo "<img src='$flag_b->roundsmall'> ";
+							echo $b_team->fn . ": " . $scorecard_b;
+							
 
 
 
