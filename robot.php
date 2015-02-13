@@ -1,3 +1,8 @@
+<?php 
+$server = $_SERVER['HTTP_HOST'];
+if (isset($_GET['write'])) {$this_write='write=' . $_GET['write'];} else {$this_write=null;}
+?>
+<meta http-equiv="refresh" content="15; url=http://<?php echo $server . '/robot.php?' . $this_write; ?>" />
 <?php
 if (isset($_GET['write'])=='go') {
 

@@ -1,0 +1,169 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2015-02-12T20:43:13Z",
+        "lang": "en-US",
+        "results": {
+            "Scorecard": {
+                "v": "0",
+                "mid": "190862",
+                "m": "2",
+                "series": {
+                    "series_id": "12206",
+                    "series_name": "Cricket World Cup Warm-up Matches, 2015"
+                },
+                "ecf": "0",
+                "place": {
+                    "vid": "325",
+                    "stadium": "Hagley Oval, Christchurch",
+                    "city": "Christchurch",
+                    "country": "New Zealand",
+                    "Gimaget": "https://s.yimg.com/qx/cricket/fufp/images/venue_325_thumb-13-7-2010-c62269da1fc5a455c2d3574fa52323c4.jpg",
+                    "date": "20150208220000",
+                    "enddate": "20150209060000"
+                },
+                "mn": "Match 3",
+                "teams": [{
+                    "i": "7",
+                    "fn": "South Africa",
+                    "sn": "SA",
+                    "logo": {
+                        "std": "https://s.yimg.com/qx/cricket/fufp/images/south_africa-26-2-2013-0dd53b4c3d9d2d62fdf47e690a892b92.jpg",
+                        "small": "https://s.yimg.com/qx/cricket/fufp/images/south_africa_small-1-2-2011-53d3554a638cc4b114764c154ea164bd.jpg"
+                    },
+                    "flag": {
+                        "std": "https://s.yimg.com/qx/cricket/fufp/images/south_africa_flag-1-2-2011-d42076e888a05412fdfdf7504c4c6649.gif",
+                        "small": "https://s.yimg.com/qx/cricket/fufp/images/south_africa_flag_small-1-2-2011-52e6632a8c28d6b73e7e583692b58f16.gif",
+                        "roundstd": "https://s.yimg.com/qx/cricket/fufp/images/7-11-2-2012-4541e123431f83ef71ca72c9ba36a989.png",
+                        "roundsmall": "https://s.yimg.com/qx/cricket/fufp/images/7_s-11-2-2012-d7641c072634340445b36f19996601ba.png",
+                        "roundlarge": "https://s.yimg.com/qx/cricket/fufp/images/7_l-11-2-2012-6ffcebebcba7787554927c94de0b3109.png"
+                    }
+                }, {
+                    "i": "8",
+                    "fn": "Sri Lanka",
+                    "sn": "SL",
+                    "logo": {
+                        "std": "https://s.yimg.com/qx/cricket/fufp/images/sri_lanka-26-2-2013-de0108e194085662137677a04fc4d093.jpg",
+                        "small": "https://s.yimg.com/qx/cricket/fufp/images/sri_lanka_small-26-2-2013-da0378709cab16d862dd11348d5f8a09.jpg"
+                    },
+                    "flag": {
+                        "std": "https://s.yimg.com/qx/cricket/fufp/images/sri_lanka_flag-1-2-2011-9c66eb3e952d7fcda9b20d42145ef18c.gif",
+                        "small": "https://s.yimg.com/qx/cricket/fufp/images/sri_lanka_flag_small-1-2-2011-4239d880b394fcc423a14234d1fafaac.gif",
+                        "roundstd": "https://s.yimg.com/qx/cricket/fufp/images/8-11-2-2012-09cb390bd958ae05890f56d2b1d9a39a.png",
+                        "roundsmall": "https://s.yimg.com/qx/cricket/fufp/images/8_s-11-2-2012-8d06a8566e73875152c057e7a0993b45.png",
+                        "roundlarge": "https://s.yimg.com/qx/cricket/fufp/images/8_l-11-2-2012-42596125ceefa9b3960e6231785d0ab6.png"
+                    }
+                }],
+                "past_ings": [{
+                    "s": {
+                        "t": "1",
+                        "i": "2",
+                        "ps": "0",
+                        "stay_live": "No",
+                        "ld": "No",
+                        "ldmsg": null,
+                        "pms": "complete",
+                        "a": {
+                            "fo": "0",
+                            "pp": null,
+                            "i": "7",
+                            "cr": "7.67",
+                            "r": "188",
+                            "o": "24.3",
+                            "w": "5",
+                            "reo": "25",
+                            "b": "0",
+                            "lb": "2",
+                            "wd": "4",
+                            "nb": "1",
+                            "pt": "0",
+                            "l": "0",
+                            "cp": "0"
+                        },
+                        "rts": "1423659429",
+                        "tz": "+13:00"
+                    },
+                    "d": {
+                        "a": {
+                            "t": [{
+                                "i": "4357",
+                                "a": "3",
+                                "c": "not out",
+                                "dt": null,
+                                "fd": "0",
+                                "bd": "0",
+                                "cb": "no",
+                                "b": "9",
+                                "r": "16",
+                                "sr": "177.77777777778",
+                                "four": "2",
+                                "six": "0",
+                                "name": "Rilee Rossouw"
+                            }, {
+                                "i": "3893",
+                                "a": "3",
+                                "c": "not out",
+                                "dt": null,
+                                "fd": "0",
+                                "bd": "0",
+                                "cb": "no",
+                                "b": "6",
+                                "r": "13",
+                                "sr": "216.66666666667",
+                                "four": "0",
+                                "six": "1",
+                                "name": "Vernon Philander"
+                            }]
+                        }
+                    }
+                }, {
+                    "s": {
+                        "t": "1",
+                        "i": "1",
+                        "ps": "0",
+                        "stay_live": "Yes",
+                        "ld": "No",
+                        "ldmsg": null,
+                        "pms": "complete",
+                        "a": {
+                            "fo": "0",
+                            "pp": null,
+                            "i": "8",
+                            "cr": "6.24",
+                            "r": "279",
+                            "o": "44.4",
+                            "w": "7",
+                            "reo": "44.4",
+                            "b": "4",
+                            "lb": "4",
+                            "wd": "8",
+                            "nb": "3",
+                            "pt": "0",
+                            "l": "0"
+                        },
+                        "rts": "1423565223",
+                        "tz": "+13:00"
+                    }
+                }],
+                "toss": {
+                    "win": "7",
+                    "bat": "0",
+                    "text": "xxx-xxx-xxx"
+                },
+                "result": {
+                    "r": "1",
+                    "winner": "7",
+                    "by": "5",
+                    "how": "wickets",
+                    "isdl": "1",
+                    "isso": "0",
+                    "isff": "0",
+                    "desc": null
+                },
+                "ms": "Match Ended",
+                "mt": "2",
+                "cts": "1423773792"
+            }
+        }
+    }
+}
