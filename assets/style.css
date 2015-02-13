@@ -116,6 +116,10 @@ strong {
 	font-size: 0.8em;
 }
 
+.status {
+	color:rgba(250,100,100,1);
+}
+
 /** COOL STYLINGS ==============================================================>
 **/
 .styled-select {

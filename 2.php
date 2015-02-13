@@ -47,7 +47,7 @@ function exis($var) {
 							$team1 = $match->Team[1];
 							$gotdate = strtotime($match->StartDate);
 							$date = date('H:iA d M', $gotdate);
-							echo "<a href='?match=$our_id'>" . $team0->Team . " vs " . $team1->Team . "</a><br>
+							echo "<a href='?match=$our_id'>" . $team1->Team . " vs " . $team0->Team . "</a><br>
 							<span class='date'>$date</span><br><br>
 							";
 							$our_id++;
@@ -71,7 +71,7 @@ function exis($var) {
 							$flag_a = $a_team->flag;
 							$flag_b = $b_team->flag;
 
-							echo "<img src='$flag_a->roundsmall'> <span class='h1'>" . $a_team->fn . " <strong>vs</strong> " . $b_team->fn . "</span> <img src='$flag_b->roundsmall'><br>";	
+							echo "<img src='$flag_b->roundsmall'> <span class='h1'>" . $b_team->fn . " <strong>vs</strong> " . $a_team->fn . "</span> <img src='$flag_a->roundsmall'><br>";	
 							echo "<span class='status'>$scores->ms</span><br><br>";
 							$the_scores_a = exis($scores->past_ings[0]);
 							$the_scores_b = exis($scores->past_ings[1]);
