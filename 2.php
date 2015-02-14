@@ -43,7 +43,7 @@ if ($obj->query->count > 0) {
 
 		</section>
 		<div class="ad">
-			Advertise here
+			Advertise here: call 0300 2674767
 		</div>
 
 		<!-- jQuery -->
