@@ -77,7 +77,7 @@ $obj = json_decode($json);
 						$pagetitle = $b_team->sn . " " . $scorecard_b;
 					}
 
-					echo "<br><br>";
+					echo "<div class='seper'><hr></div>";
 				}
 			?>
 	</div>
