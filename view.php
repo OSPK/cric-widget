@@ -10,7 +10,7 @@ print_r($obj);
 echo "<h1>## END MATCHES ##</h1>";
 echo "<br>======================================================================================<br><pre>";
 
-$numbers = ['test',0,1,2,3,4];
+$numbers = ['live'];
 
 foreach ($numbers as $number) {
 
