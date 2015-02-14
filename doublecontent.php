@@ -7,7 +7,13 @@ $json = file_get_contents($url);
 $obj = json_decode($json);
 
 ?>
-	<div id="widcontent" style="overflow-y:scroll;">
+<style type="text/css">
+	section	{
+		overflow-y:scroll;
+	}
+</style>
+		
+		<div id="widcontent">
 			<?php 
 
 				$scoreses = $obj->query->results->Scorecard;
