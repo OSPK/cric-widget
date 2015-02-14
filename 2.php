@@ -49,12 +49,22 @@ if ($obj->query->count>0) {
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 
-		<script type="text/javascript" language="javascript">
-			function loadNowPlaying(){
-			  $("section.widget").load("widcontent.php");
-			}
-			setInterval(function(){loadNowPlaying()}, 10000);
-		</script>
+		<?php if (is_array($scores)) { ?>
+			<script type="text/javascript" language="javascript">
+				function loadNowPlaying(){
+				  $("section.widget").load("doublecontent.php");
+				}
+				setInterval(function(){loadNowPlaying()}, 10000);
+			</script>
+		<?php } ?>
+		<?php if (!is_array($scores)) { ?>
+			<script type="text/javascript" language="javascript">
+				function loadNowPlaying(){
+				  $("section.widget").load("widcontent.php");
+				}
+				setInterval(function(){loadNowPlaying()}, 10000);
+			</script>
+		<?php } ?>
 		<?php if ($obj->query->count==1) { ?>
 			<script>
 				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
