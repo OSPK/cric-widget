@@ -59,7 +59,7 @@ $obj = json_decode($json);
 					echo "</div>";
 
 					if (isset($result->winner)) {
-						echo "<br><br><h2 class='h2'><strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
+						echo "<br><h2 class='h2'><strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
 					}							
 					
 					if ($the_scores_a->s->stay_live=='Yes') {
