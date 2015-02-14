@@ -27,7 +27,7 @@ $obj = json_decode($json);
 	<body <?php if ($obj->query->count==1) {echo "onload='parent.document.title=document.title'";} ?>>
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
-			<?php include_once "3.php";?>
+			<?php include_once "widcontent.php";?>
 		</section>
 
 		<!-- jQuery -->
@@ -35,9 +35,9 @@ $obj = json_decode($json);
 
 		<script type="text/javascript" language="javascript">
 			function loadNowPlaying(){
-			  $("section.widget").load("3.php");
+			  $("section.widget").load("widcontent.php");
 			}
-			setInterval(function(){loadNowPlaying()}, 5000);
+			setInterval(function(){loadNowPlaying()}, 10000);
 		</script>
 		<?php if ($obj->query->count==1) { ?>
 			<script>
