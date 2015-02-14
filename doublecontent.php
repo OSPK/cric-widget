@@ -7,7 +7,7 @@ $json = file_get_contents($url);
 $obj = json_decode($json);
 
 ?>
-	<div id="widcontent">
+	<div id="widcontent" style="overflow-y:scroll;">
 			<?php 
 
 				$scoreses = $obj->query->results->Scorecard;
@@ -70,6 +70,8 @@ $obj = json_decode($json);
 					if ($the_scores_b->s->stay_live=='Yes') {
 						$pagetitle = $b_team->sn . " " . $scorecard_b;
 					}
+
+					echo "<br><br>";
 				}
 			?>
 	</div>
