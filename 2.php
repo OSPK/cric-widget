@@ -29,6 +29,9 @@ $obj = json_decode($json);
 		<section class="widget">
 			<?php include_once "widcontent.php";?>
 		</section>
+		<div class="ad">
+			Advertise here
+		</div>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>

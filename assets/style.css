@@ -60,7 +60,7 @@ body {
 }
 section {
 	width:300px;
-	height: 270px;
+	height: 219px;
 	background-color:#E9F4E4;
 	border-radius: 2px;
 	padding:20px;
@@ -135,6 +135,14 @@ strong {
 
 .scorecard {
 	padding-left:20px;
+}
+.ad {
+	background: rgb(101, 162, 221);
+	color: rgb(24, 24, 24);
+	height: 51px;
+	width: 300px;
+	padding: 16px;
+	text-align: center;
 }
 /** COOL STYLINGS ==============================================================>
 **/
