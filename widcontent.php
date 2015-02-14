@@ -96,3 +96,9 @@ $obj = json_decode($json);
 				}
 			?>
 	</div>
+
+	<?php if ($obj->query->count==1) { ?>
+			<script>
+				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
+			</script>
+	<?php } ;?>
