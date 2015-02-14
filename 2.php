@@ -120,12 +120,16 @@ $obj = json_decode($json);
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script>
-		    $(document).ready(
-		            function() {
-		                setInterval(function() {
-		                    $('#widcontent');
-		                }, 3000);
-		            });
+		    function loadlink(){
+			    $('#widcontent').load('2.php',function () {
+			         $(this).unwrap();
+			    });
+			}
+
+			loadlink(); // This will run on page load
+			setInterval(function(){
+			    loadlink() // this will run after every 5 seconds
+			}, 10000);
 		</script>
 		<?php if ($obj->query->count==1) { ?>
 			<script>
