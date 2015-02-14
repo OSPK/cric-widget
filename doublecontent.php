@@ -1,5 +1,5 @@
 <?php 
-echo "test";
+
 $server = $_SERVER['HTTP_HOST'];
 
 $url = "http://". $server . "/data/live.json";
@@ -11,7 +11,7 @@ $obj = json_decode($json);
 			<?php 
 
 				if ($obj->query->count>0) {
-					
+					echo "test";
 					$scoreses = $obj->query->results->Scorecard;
 
 					foreach ($scorses as $scores) {

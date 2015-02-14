@@ -8,7 +8,6 @@ $obj = json_decode($json);
 
 if ($obj->query->count>0) {
 	$scores = $obj->query->results->Scorecard;
-	echo "string";
 }
 
 ?>
