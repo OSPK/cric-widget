@@ -11,10 +11,11 @@ $obj = json_decode($json);
 			<?php 
 
 				if ($obj->query->count>0) {
-					echo "test1";
+					
 					$scoreses = $obj->query->results->Scorecard;
 
-					foreach ($scorses as $scores) {
+					
+					foreach ($scoreses as $scores) {
 
 						$result = $scores->result;
 
