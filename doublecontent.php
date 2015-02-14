@@ -10,7 +10,7 @@ $obj = json_decode($json);
 	<div id="widcontent">
 			<?php 
 
-				if ($obj->query->count==1) {
+				if ($obj->query->count>0) {
 					
 					$scoreses = $obj->query->results->Scorecard;
 
