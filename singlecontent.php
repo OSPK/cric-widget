@@ -75,7 +75,7 @@
 
 				elseif ($obj->query->count==0) {
 
-					echo "<div class='schd'><h2 class='h2'>Upcoming Matches</h2><br><div class='upcoming'>";
+					echo "<div class='schd'><h2 class='h2'><strong>Upcoming Matches</strong></h2><br><div class='upcoming'>";
 
 					$url = "http://". $server . "/data/matches.json";
 					$json = file_get_contents($url);				
