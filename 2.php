@@ -6,7 +6,7 @@ $json = file_get_contents($url);
 $obj = json_decode($json);
 
 
-if ($obj->query->count>0) {
+if ($obj->query->count > 0) {
 	$scores = $obj->query->results->Scorecard;
 }
 
@@ -51,10 +51,10 @@ if ($obj->query->count>0) {
 
 		<?php
 
-		if ($obj->query->count>0) {
+		if ($obj->query->count > 0) {
 			$scores = $obj->query->results->Scorecard;
 		}
-			
+
 		 if (!is_array($scores)) { ?>
 			<script type="text/javascript" language="javascript">
 				function loadNowPlaying(){
