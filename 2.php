@@ -5,6 +5,11 @@ $url = "http://". $server . "/data/live.json";
 $json = file_get_contents($url);
 $obj = json_decode($json);
 
+
+if ($obj->query->count==1) {
+	$scores = $obj->query->results->Scorecard;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -27,7 +32,15 @@ $obj = json_decode($json);
 	<body <?php if ($obj->query->count==1) {echo "onload='parent.document.title=document.title'";} ?>>
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
-			<?php include_once "widcontent.php";?>
+			<?php 
+				if (is_array($scores)) {
+					include_once "doublecontent.php";
+				}
+				else {
+					include_once "widcontent.php";
+				}
+			?>
+
 		</section>
 		<div class="ad">
 			Advertise here
