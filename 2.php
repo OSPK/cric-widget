@@ -57,6 +57,7 @@ if ($obj->query->count>0) {
 				setInterval(function(){loadNowPlaying()}, 10000);
 			</script>
 		<?php } ?>
+
 		<?php if (!is_array($scores)) { ?>
 			<script type="text/javascript" language="javascript">
 				function loadNowPlaying(){
@@ -65,6 +66,7 @@ if ($obj->query->count>0) {
 				setInterval(function(){loadNowPlaying()}, 10000);
 			</script>
 		<?php } ?>
+		
 		<?php if ($obj->query->count==1) { ?>
 			<script>
 				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
