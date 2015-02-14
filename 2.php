@@ -6,7 +6,7 @@ $json = file_get_contents($url);
 $obj = json_decode($json);
 
 
-if ($obj->query->count==1) {
+if ($obj->query->count>0) {
 	$scores = $obj->query->results->Scorecard;
 }
 
