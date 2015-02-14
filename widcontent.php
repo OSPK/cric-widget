@@ -75,7 +75,7 @@ $obj = json_decode($json);
 
 				elseif ($obj->query->count==0) {
 
-					echo "<h2>Upcoming Matches</h2>";
+					echo "<h2 class='h2'>Upcoming Matches</h2><br><div class='upcoming'>";
 
 					$url = "http://". $server . "/data/matches.json";
 					$json = file_get_contents($url);				
@@ -93,6 +93,8 @@ $obj = json_decode($json);
 						";
 						$our_id++;
 					}
+
+					echo "</div>";
 				}
 			?>
 	</div>
