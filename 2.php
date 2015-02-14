@@ -1,15 +1,14 @@
 <?php 
-$server = $_SERVER['HTTP_HOST'];
+	$server = $_SERVER['HTTP_HOST'];
 
-$url = "http://". $server . "/data/live.json";
-$json = file_get_contents($url);
-$obj = json_decode($json);
+	$url = "http://". $server . "/data/live.json";
+	$json = file_get_contents($url);
+	$obj = json_decode($json);
 
 
-if ($obj->query->count > 0) {
-	$scores = $obj->query->results->Scorecard;
-}
-
+	if ($obj->query->count > 0) {
+		$scores = $obj->query->results->Scorecard;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -33,14 +32,8 @@ if ($obj->query->count > 0) {
 		<div class="widheader"><strong>Live Score - Daily Pakistan Cricket</strong></div>
 		<section class="widget">
 			<?php 
-				if (is_array($scores)) {
-					include_once "doublecontent.php";
-				}
-				else {
-					include_once "widcontent.php";
-				}
+				include_once "widcontent.php";
 			?>
-
 		</section>
 		<div class="ad">
 			Advertise here: call 0300 2674767
@@ -49,31 +42,12 @@ if ($obj->query->count > 0) {
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 
-		<?php
-
-		if ($obj->query->count > 0) {
-			$scores = $obj->query->results->Scorecard;
-		}
-
-		 if (!is_array($scores)) { ?>
-			<script type="text/javascript" language="javascript">
-				function loadNowPlaying(){
-				  $("section.widget").load("widcontent.php");
-				}
-				setInterval(function(){loadNowPlaying()}, 10000);
-			</script>
-		<?php } ?>
-
-
-		<?php if (is_array($scores)) { ?>
-			<script type="text/javascript" language="javascript">
-				function loadNowPlaying(){
-				  $("section.widget").load("doublecontent.php");
-				}
-				setInterval(function(){loadNowPlaying()}, 10000);
-			</script>
-		<?php } ?>
-
+		<script type="text/javascript" language="javascript">
+			function loadNowPlaying(){
+			  $("section.widget").load("widcontent.php");
+			}
+			setInterval(function(){loadNowPlaying()}, 10000);
+		</script>
 
 		<?php if ($obj->query->count==1) { ?>
 			<script>
@@ -89,7 +63,7 @@ if ($obj->query->count > 0) {
 
 		  ga('create', 'UA-59742796-1', 'auto');
 		  ga('send', 'pageview');
-
 		</script>
+
 	</body>
 </html>

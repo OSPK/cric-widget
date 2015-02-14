@@ -1,10 +1,10 @@
 <?php 
 
-$server = $_SERVER['HTTP_HOST'];
+// $server = $_SERVER['HTTP_HOST'];
 
-$url = "http://". $server . "/data/live.json";
-$json = file_get_contents($url);
-$obj = json_decode($json);
+// $url = "http://". $server . "/data/live.json";
+// $json = file_get_contents($url);
+// $obj = json_decode($json);
 
 ?>
 <style type="text/css">
