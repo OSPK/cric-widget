@@ -11,7 +11,7 @@ if ($obj->query->count > 0) {
 
 ?>
 	<?php 
-		if (is_array($scores)) {
+		if ($obj->query->count > 0 && is_array($scores)) {
 			include_once "doublecontent.php";
 		}
 		else {
