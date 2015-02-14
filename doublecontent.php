@@ -1,4 +1,5 @@
 <?php 
+echo "test";
 $server = $_SERVER['HTTP_HOST'];
 
 $url = "http://". $server . "/data/live.json";
