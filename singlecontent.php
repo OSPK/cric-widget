@@ -9,7 +9,7 @@
 	<div id="widcontent">
 			<?php 
 
-				if ($obj->query->count==1) {
+				if ($obj->query->count > 0) {
 					
 					$scores = $obj->query->results->Scorecard;
 
