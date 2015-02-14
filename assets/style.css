@@ -136,6 +136,11 @@ strong {
 .scorecard {
 	padding-left:20px;
 }
+
+.scorecard img {
+	margin-bottom: -2px;
+}
+
 .ad {
 	background: rgb(101, 162, 221);
 	color: rgb(39, 88, 144);
