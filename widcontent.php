@@ -33,8 +33,8 @@ $obj = json_decode($json);
 					echo "</div>";
 
 					if (is_array($scores->past_ings)) {
-						$the_scores_a = $scores->past_ings[0];
-						$the_scores_b = $scores->past_ings[1];
+						$the_scores_a = $scores->past_ings[1];
+						$the_scores_b = $scores->past_ings[0];
 					}
 					$the_scores_a = $scores->past_ings;
 
