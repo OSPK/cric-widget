@@ -167,7 +167,10 @@
 				echo "<br><div class='mobile'>";
 					$scoreboard->total_score('team_a_score');
 				echo "</div><br>";
-				echo "<p>Waiting for match...</p>";
+
+				if ($obj->query->count == 0) {
+					echo "<p>Waiting for match...</p>";
+				}
 
 				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
 				echo "<span class='teamfname'>" . $scoreboard->teamname('team_b', 'fn') . "</span></div>";
