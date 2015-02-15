@@ -167,8 +167,7 @@
 				echo "<br><div class='mobile'>";
 					$scoreboard->total_score('team_a_score');
 				echo "</div><br>";
-					echo "<p>5 Wickets for Sohail Khan</p><p>Target for Pakistan: <strong>301</strong> R.R 6</p>";
-				echo "<br><hr>";
+				echo "<p>Waiting for match...</p>";
 
 				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
 				echo "<span class='teamfname'>" . $scoreboard->teamname('team_b', 'fn') . "</span></div>";
