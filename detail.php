@@ -40,9 +40,9 @@
 
 		<script type="text/javascript" language="javascript">
 			function loadNowPlaying(){
-			  $("section.widget").load("detailcontent.php");
+			  $("section.details").load("detailcontent.php");
 			}
-			setInterval(function(){loadNowPlaying()}, 10000);
+			setInterval(function(){loadNowPlaying()}, 9910000);
 		</script>
 
 		<script>

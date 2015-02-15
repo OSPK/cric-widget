@@ -24,6 +24,9 @@
 					public $players_b_scores;
 
 					public $bat_status;
+
+					public $place;
+					public $place_img;
 					
 					function __construct($obj) {
 
@@ -34,6 +37,8 @@
 							$scorecard = $obj->query->results->Scorecard[0];
 						}
 						
+						$this->place = $scorecard->place->stadium;
+						$this->place_img = $scorecard->place->Gimaget;
 
 						$this->team_a = $scorecard->teams[0];
 						$this->team_b = $scorecard->teams[1];
@@ -102,6 +107,10 @@
 					}
 					//END CONSTRUCTION
 
+					public function teamname($team, $size='sn') {
+						return $this->{$team}->{$size};
+					}
+
 					public function a_scores() {
 						foreach ($this->players_a_scores as $id => $score) {
 							echo "<div class='indv_scr'><span class='pname'>" . $this->players_a[$id] . '</span>';
@@ -114,16 +123,57 @@
 							echo "<div class='indv_scr'><span class='pname'>" . $this->players_b[$id] . '</span>';
 							echo ": <span class='pscore'>" . $score . "</span><br></div>";
 						}
-					} 
+					}
+
+					public function get_flag($team, $size) {
+						$thisteam = $this->{$team};
+						echo "<img src='" . $thisteam->flag->{$size} . "'>";
+					}
+
+					public function total_score($team) {
+						$total = $this->{$team}->s->a->r;
+						$t_wkts = $this->{$team}->s->a->w;
+						$t_ovrs = $this->{$team}->s->a->o;
+						$t_sr = $this->{$team}->s->a->cr;
+
+						echo "<span class='totalscore'>$total/$t_wkts ($t_ovrs) - SR $t_sr</span>";
+					}
+
+					public function bat_turn() {
+						$a_turn = $this->team_a_score->s->i;
+						$b_turn = $this->team_b_score->s->i;
+						if ($a_turn == 1) {
+							return "";
+						}
+					}
 				}
 
 				$scoreboard = new ScoreBoard($obj);
 
+				echo "<div class='match-title big'><img src='".
+				$scoreboard->place_img
+				."'><br><br>".$scoreboard->place."<h1>".
+				$scoreboard->teamname('team_a', 'fn').
+				" <span>vs</span> ".
+				$scoreboard->teamname('team_b', 'fn').
+				"</h1></div>";
+
+				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_a', 'std');echo "</span>";
+				echo "<span class='teamfname'>" . $scoreboard->teamname('team_a', 'fn') . "</span></div>";
+				$scoreboard->total_score('team_a_score');
+
 				$scoreboard->a_scores();
-				echo "<br><br>";
+
+				echo "<br><hr>";
+
+				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
+				echo "<span class='teamfname'>" . $scoreboard->teamname('team_b', 'fn') . "</span></div>";
+				$scoreboard->total_score('team_b_score');
+
 				$scoreboard->b_scores();
 
 			?>
+			<br><br>
 	</div>
 
 	<?php if ($obj->query->count==1) { ?>

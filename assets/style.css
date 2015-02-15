@@ -71,6 +71,18 @@ section.widget {
 	background-repeat: no-repeat;
 	position: relative;
 }
+section.details {
+	width:500px;
+	background-color:#E9F4E4;
+	border-radius: 2px;
+	padding: 8px 10px;
+	overflow: hidden;
+	background-image: url('/assets/bg.png');
+	background-position: right bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+}
 .widheader {
 	position: relative;
 	padding: 7px 20px 7px 20px;
@@ -88,6 +100,13 @@ select {
 
 h1.title, .h1 {
 	font-size: 1.5em;
+}
+.big h1 {
+	font-size: 2em;
+	font-weight: 400;
+}
+.big span {
+	font-weight: 300;
 }
 
 h2.score {
@@ -162,16 +181,37 @@ strong {
 	font-size: 12px;
 }
 .pname {
-	color: #555;
+	color: #222;
 }
 .pscore {
 	font-size: 15px;
+	float: right;
 }
 .dism {
 	font-size: 10px;
 }
 .indv_scr {
 	padding:5px;
+}
+.indv_scr:nth-child(2n) {
+	background-color: #cecece;
+	background-color: rgba(255,255,255,0.8);
+}
+.totalscore {
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: -35px;
+}
+.teamfname {
+	font-size: 15px;
+	font-weight: bold;
+}
+.bigflag img{
+	margin-bottom: -20px;
+}
+.scrheadr {
+	padding:20px 0px;
 }
 /** COOL STYLINGS ==============================================================>
 **/
