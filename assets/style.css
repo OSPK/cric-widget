@@ -73,7 +73,7 @@ section.widget {
 	overflow-y: scroll; 
 }
 section.details {
-	width:500px;
+	width:100%;
 	background-color:#E9F4E4;
 	border-radius: 2px;
 	padding: 8px 10px;
@@ -227,6 +227,24 @@ span.live {
 }
 small {
 	font-size: 10px;
+}
+div.mobile .totalscore {
+	display: none;
+}
+
+
+
+@media (max-width: 500px) {
+  .dism {
+    display: none;
+  }
+  .totalscore {
+  	display: none;
+  }
+  div.mobile .totalscore {
+  	display: block;
+  	margin-top: 10px;
+  }
 }
 /** COOL STYLINGS ==============================================================>
 **/

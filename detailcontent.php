@@ -164,6 +164,10 @@
 
 				$scoreboard->a_scores();
 
+				echo "<br><div class='mobile'>";
+					$scoreboard->total_score('team_a_score');
+				echo "</div><br>";
+
 				echo "<br><hr>";
 
 				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
@@ -171,6 +175,10 @@
 				$scoreboard->total_score('team_b_score');
 
 				$scoreboard->b_scores();
+
+				echo "<br><div class='mobile'>";
+					$scoreboard->total_score('team_b_score');
+				echo "</div><br>";
 
 			?>
 			<br><br>
