@@ -70,6 +70,7 @@ section.widget {
 	background-size: contain;
 	background-repeat: no-repeat;
 	position: relative;
+	overflow-y: scroll; 
 }
 section.details {
 	width:500px;
