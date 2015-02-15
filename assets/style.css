@@ -161,13 +161,17 @@ strong {
 }
 
 .ad {
-	background: rgb(101, 162, 221);
+	background: rgb(221, 156, 101);
 	color: rgb(39, 88, 144);
 	height: 51px;
 	width: 300px;
 	padding: 16px;
 	text-align: center;
 }
+.ad a {
+	color:#222;
+}
+
 .seper {
 	margin-top: 12px;
 	margin-bottom:5px;
