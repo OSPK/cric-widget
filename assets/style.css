@@ -222,6 +222,8 @@ span.live {
 	padding:3px;
 	background-color: #D82A2A;
 	color: white;
+	border-radius: 2px;
+	font-size: 12px;
 }
 small {
 	font-size: 10px;
