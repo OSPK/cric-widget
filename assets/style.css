@@ -161,6 +161,18 @@ strong {
 .upcoming {
 	font-size: 12px;
 }
+.pname {
+	color: #555;
+}
+.pscore {
+	font-size: 15px;
+}
+.dism {
+	font-size: 10px;
+}
+.indv_scr {
+	padding:5px;
+}
 /** COOL STYLINGS ==============================================================>
 **/
 .styled-select {

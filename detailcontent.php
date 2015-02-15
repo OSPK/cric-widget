@@ -27,7 +27,13 @@
 					
 					function __construct($obj) {
 
-						$scorecard = $obj->query->results->Scorecard;
+						if ($obj->query->count == 1) {
+							$scorecard = $obj->query->results->Scorecard;
+						}
+						if ($obj->query->count > 1) {
+							$scorecard = $obj->query->results->Scorecard[0];
+						}
+						
 
 						$this->team_a = $scorecard->teams[0];
 						$this->team_b = $scorecard->teams[1];
@@ -81,7 +87,7 @@
 						$this->players_a_scores = array();
 						foreach ($playerscores as $playerscore) {
 							$psid = $playerscore->i;
-							$bat_score = $playerscore->r . " (" . $playerscore->b . ") " . $playerscore->c;
+							$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
 							$this->players_a_scores[$psid] = $bat_score;
 						}
 						//TEAM B
@@ -89,23 +95,24 @@
 						$this->players_b_scores = array();
 						foreach ($playerscores as $playerscore) {
 							$psid = $playerscore->i;
-							$bat_score = $playerscore->r . " (" . $playerscore->b . ") " . $playerscore->c;
+							$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
 							$this->players_b_scores[$psid] = $bat_score;
 						}
 
 					}
+					//END CONSTRUCTION
 
 					public function a_scores() {
 						foreach ($this->players_a_scores as $id => $score) {
-							echo $this->players_a[$id];
-							echo " : " . $score . "<br>";
+							echo "<div class='indv_scr'><span class='pname'>" . $this->players_a[$id] . '</span>';
+							echo ": <span class='pscore'>" . $score . "</span><br></div>";
 						}
 					}
 
 					public function b_scores() {
 						foreach ($this->players_b_scores as $id => $score) {
-							echo $this->players_b[$id];
-							echo " : " . $score . "<br>";
+							echo "<div class='indv_scr'><span class='pname'>" . $this->players_b[$id] . '</span>';
+							echo ": <span class='pscore'>" . $score . "</span><br></div>";
 						}
 					} 
 				}
