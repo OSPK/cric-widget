@@ -156,7 +156,7 @@
 				$scoreboard->teamname('team_b', 'fn').
 				" <span>vs</span> ".
 				$scoreboard->teamname('team_a', 'fn').
-				"</h1></div>";
+				"</h1></div><span class='live'>LIVE</span>";
 
 				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_a', 'std');echo "</span>";
 				echo "<span class='teamfname'>" . $scoreboard->teamname('team_a', 'fn') . "</span></div>";

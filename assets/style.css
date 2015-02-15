@@ -218,6 +218,11 @@ strong {
 .scrheadr {
 	padding:20px 0px;
 }
+.live {
+	padding:3px;
+	background-color: #D82A2A;
+	color: white;
+}
 /** COOL STYLINGS ==============================================================>
 **/
 .styled-select {
