@@ -34,7 +34,7 @@
 							$scorecard = $obj->query->results->Scorecard;
 						}
 						if ($obj->query->count > 1) {
-							$scorecard = $obj->query->results->Scorecard[1];
+							$scorecard = $obj->query->results->Scorecard[0];
 						}
 						
 						$this->place = $scorecard->place->stadium;
