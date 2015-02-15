@@ -234,7 +234,7 @@ div.mobile .totalscore {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 490px) {
   .dism {
     display: none;
   }
