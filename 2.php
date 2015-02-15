@@ -36,7 +36,9 @@
 			?>
 		</section>
 		<div class="ad">
-			Advertise here: call 0300 2674767
+			<a href="http://dailypakistan.com.pk/cricket-world-cup-2015/15-Feb-2015/194394" target="_parent">
+			PAK vs India: Live Scorecard
+			</a>
 		</div>
 
 		<!-- jQuery -->

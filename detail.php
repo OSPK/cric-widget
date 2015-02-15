@@ -42,7 +42,7 @@
 			function loadNowPlaying(){
 			  $("section.details").load("detailcontent.php");
 			}
-			setInterval(function(){loadNowPlaying()}, 9910000);
+			setInterval(function(){loadNowPlaying()}, 10000);
 		</script>
 
 		<script>
