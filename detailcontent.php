@@ -153,9 +153,9 @@
 				echo "<div class='match-title big'><img src='".
 				$scoreboard->place_img
 				."'><br><br>".$scoreboard->place."<h1>".
-				$scoreboard->teamname('team_a', 'fn').
-				" <span>vs</span> ".
 				$scoreboard->teamname('team_b', 'fn').
+				" <span>vs</span> ".
+				$scoreboard->teamname('team_a', 'fn').
 				"</h1></div>";
 
 				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_a', 'std');echo "</span>";
