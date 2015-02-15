@@ -1,7 +1,7 @@
 <?php 
  $server = $_SERVER['HTTP_HOST'];
 
- $url = "http://". $server . "/data/full-scr.json";
+ $url = "http://". $server . "/data/livedetail.json";
  $json = file_get_contents($url);
  $obj = json_decode($json);
 
