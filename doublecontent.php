@@ -18,6 +18,8 @@
 
 				$scoreses = $obj->query->results->Scorecard;
 
+				$scoreses = array_reverse($scoreses);
+
 				foreach ($scoreses as $scores) {
 
 					$result = $scores->result;
