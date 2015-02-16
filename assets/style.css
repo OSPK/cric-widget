@@ -164,6 +164,7 @@ strong {
 
 .ad {
 	background: rgb(221, 156, 101);
+	background-image: url(../ads/small/1.png);
 	color: rgb(39, 88, 144);
 	height: 51px;
 	width: 300px;
