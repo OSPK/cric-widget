@@ -184,7 +184,7 @@
 					echo "<br><div class='mobile'>";
 						$scoreboard->total_score('team_b_score');
 					echo "</div><br>";
-				}
+				} 
 			?>
 			<br><br>
 	</div>
