@@ -5,6 +5,8 @@
  $json = file_get_contents($url);
  $obj = json_decode($json);
 
+ $matchno = $_GET['match'];
+
 ?>
 	<div id="widcontent">
 			<?php 
@@ -150,38 +152,39 @@
 
 				$scoreboard = new ScoreBoard($obj);
 
-				echo "<div class='match-title big'><img src='".
-				$scoreboard->place_img
-				."'><br><br>".$scoreboard->place."<h1>".
-				$scoreboard->teamname('team_b', 'fn').
-				" <span>vs</span> ".
-				$scoreboard->teamname('team_a', 'fn').
-				"</h1><br><span class='live'>LIVE</span> <small>Refreshes automatically.</small></div>";
-
-				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_a', 'std');echo "</span>";
-				echo "<span class='teamfname'>" . $scoreboard->teamname('team_a', 'fn') . "</span></div>";
-				$scoreboard->total_score('team_a_score');
-
-				$scoreboard->a_scores();
-
-				echo "<br><div class='mobile'>";
-					$scoreboard->total_score('team_a_score');
-				echo "</div><br>";
-
 				if ($obj->query->count == 0) {
-					echo "<p>Waiting for match...</p>";
+					echo "<p>No match currently ongoing <br> Waiting for match...</p>";
 				}
 
-				echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
-				echo "<span class='teamfname'>" . $scoreboard->teamname('team_b', 'fn') . "</span></div>";
-				$scoreboard->total_score('team_b_score');
+				else {
+					echo "<div class='match-title big'><img src='".
+					$scoreboard->place_img
+					."'><br><br>".$scoreboard->place."<h1>".
+					$scoreboard->teamname('team_b', 'fn').
+					" <span>vs</span> ".
+					$scoreboard->teamname('team_a', 'fn').
+					"</h1><br><span class='live'>LIVE</span> <small>Refreshes automatically.</small></div>";
 
-				$scoreboard->b_scores();
+					echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_a', 'std');echo "</span>";
+					echo "<span class='teamfname'>" . $scoreboard->teamname('team_a', 'fn') . "</span></div>";
+					$scoreboard->total_score('team_a_score');
 
-				echo "<br><div class='mobile'>";
+					$scoreboard->a_scores();
+
+					echo "<br><div class='mobile'>";
+						$scoreboard->total_score('team_a_score');
+					echo "</div><br>";
+
+					echo "<div class='scrheadr'><span class='bigflag'>";$scoreboard->get_flag('team_b', 'std');echo "</span>";
+					echo "<span class='teamfname'>" . $scoreboard->teamname('team_b', 'fn') . "</span></div>";
 					$scoreboard->total_score('team_b_score');
-				echo "</div><br>";
 
+					$scoreboard->b_scores();
+
+					echo "<br><div class='mobile'>";
+						$scoreboard->total_score('team_b_score');
+					echo "</div><br>";
+				}
 			?>
 			<br><br>
 	</div>
