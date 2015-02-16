@@ -86,7 +86,7 @@
 					foreach ($matches as $match) {
 						$team0 = $match->Team[0];
 						$team1 = $match->Team[1];
-						$gotdate = strtotime($match->StartDate)+10*60*60;
+						$gotdate = strtotime($match->StartDate);
 						$date = date('H:iA d M', $gotdate);
 						echo $team1->Team . " vs " . $team0->Team . "<br>
 						<span class='date'>$date</span><br><br>
