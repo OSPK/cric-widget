@@ -34,7 +34,7 @@
 				include_once "detailcontent.php";
 			?>
 		</section>
-		<div class="adlarge">
+		<div class="adlarg2">
 			<!--a href="http://dailypakistan.com.pk/cricket-world-cup-2015/15-Feb-2015/194394" target="_parent">
 			PAK vs India: Live Scorecard
 			</a-->&nbsp;
