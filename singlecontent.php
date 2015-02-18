@@ -99,8 +99,7 @@
 			?>
 	</div>
 
-	<?php if ($obj->query->count==1) { ?>
+	
 			<script>
-				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
+				document.title = "Scorecard Summary";
 			</script>
-	<?php } ;?>
