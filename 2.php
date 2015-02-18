@@ -20,6 +20,7 @@
 		<!--CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 		<link href="assets/style.css" rel="stylesheet">
+		<title>Scorecard Summary</title>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,12 +51,6 @@
 			}
 			setInterval(function(){loadNowPlaying()}, 10000);
 		</script>
-
-		<?php if ($obj->query->count==1) { ?>
-			<script>
-				document.title = "<?php if (isset($pagetitle)) {echo $pagetitle;}?>";
-			</script>
-		<?php } ;?>
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
