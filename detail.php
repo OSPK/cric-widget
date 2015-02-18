@@ -37,7 +37,7 @@
 		<div class="adlarge">
 			<!--a href="http://dailypakistan.com.pk/cricket-world-cup-2015/15-Feb-2015/194394" target="_parent">
 			PAK vs India: Live Scorecard
-			</a-->
+			</a-->&nbsp;
 		</div>
 
 		<!-- jQuery -->
