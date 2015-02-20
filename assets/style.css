@@ -243,6 +243,9 @@ div.mobile .totalscore {
 	display: none;
 }
 
+.rightt {
+	margin-left:20px;
+}
 
 
 @media (max-width: 490px) {

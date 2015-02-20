@@ -5,7 +5,7 @@
 // $url = "http://". $server . "/data/live.json";
 // $json = file_get_contents($url);
 // $obj = json_decode($json);
-
+include_once "summary_class.php";
 ?>
 <style type="text/css">
 	section	{
@@ -22,62 +22,38 @@
 
 				foreach ($scoreses as $scores) {
 
-					$result = $scores->result;
-
-					$a_team = $scores->teams[0];
-					$b_team = $scores->teams[1];
-
-					$a_id = $a_team->i;
-					$b_id = $b_team->i;
-
-					${$a_id} = $a_team->fn;
-					${$b_id} = $b_team->fn;
-
-					$flag_a = $a_team->flag; $logo_a = $a_team->logo;
-					$flag_b = $b_team->flag; $logo_b = $b_team->logo;
+					$scoreboard = new ScoreBoard($scores);
 
 					echo "<div class='match-title'>";
-						echo "<img src='$flag_b->std'> <span class='h1'>" . $b_team->fn . " <br><strong>vs</strong><br> " . $a_team->fn . "</span> <img src='$flag_a->std'><br>";	
-						echo "<br><span class='status'>$scores->ms</span><br><br>";
-					echo "</div>";
+					$scoreboard->get_flag('team_b', 'std');
+						echo "<span class='h1'>" . $scoreboard->teamname('team_b', 'fn') . " <br><strong>vs</strong><br> " . $scoreboard->teamname('team_a', 'fn') . "</span>";
+					$scoreboard->get_flag('team_a', 'std'); echo "<br>";
+						echo "<br><span class='live'>LIVE</span> <small>Refreshes automatically.</small><br><br>";
+					echo "</div><br>";
 
+					echo "<div class='scorecard'>";	
 
-					$the_scores_a = $scores->past_ings;
+						$scoreboard->get_flag('team_a', 'roundsmall');
+						echo " ".$scoreboard->teamname('team_a', 'sn');
 
-					if (is_array($scores->past_ings)) {
-						$the_scores_a = $scores->past_ings[1];
-						$the_scores_b = $scores->past_ings[0];
-					}
+						$team_a_scr = $scoreboard->total_score('team_a_score');
 
-					echo "<div class='scorecard'>";					
-						//Score for Team A
-						$scorecard_a = $the_scores_a->s->a->r . "/" . $the_scores_a->s->a->w . " ("
-							. $the_scores_a->s->a->o . ") ";
-						echo "<img src='$flag_a->roundsmall'> ";
-						echo $a_team->fn . ": <span class='score'>" . $scorecard_a . "</span>";
+						if ($team_a_scr=="<span class='score'>/ () - SR </span>") {
+							echo "<span class='rightt'>Bowling...</span>";
+						} else { echo "<span class='rightt'>" .$team_a_scr. "</span>"; }
 
 						echo "<br><br>";
-						//Score for Team B
-						$scorecard_b = $the_scores_b->s->a->r . "/" . $the_scores_b->s->a->w . " ("
-							. $the_scores_b->s->a->o . ") ";
-						if ($the_scores_b->s->a->r=='') {
-							$scorecard_b = 'Bowling';
-						}
-						echo "<img src='$flag_b->roundsmall'> ";
-						echo $b_team->fn . ": <span class='score'>" . $scorecard_b . "</span>";
-					echo "</div>";
 
-					if (isset($result->winner)) {
-						echo "<br><br><h2 class='h2'><strong>${$result->winner}</strong> WON the match by $result->by $result->how </h2>";
-					}							
-					
-					if ($the_scores_a->s->stay_live=='Yes') {
-						$pagetitle = $a_team->sn . " " . $scorecard_a;
-					}
+						$scoreboard->get_flag('team_b', 'roundsmall');
+						echo " ".$scoreboard->teamname('team_b', 'sn');
 
-					if ($the_scores_b->s->stay_live=='Yes') {
-						$pagetitle = $b_team->sn . " " . $scorecard_b;
-					}
+						$team_b_scr = $scoreboard->total_score('team_b_score');
+						
+						if ($team_b_scr=="<span class='score'>/ () - SR </span>") {
+							echo "<span class='rightt'>Bowling...</span>";
+						} else { echo "<span class='rightt'>" .$team_b_scr. "</span>"; }
+
+					echo "</div>";	
 
 					echo "<div class='seper'><hr></div>";
 				}

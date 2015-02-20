@@ -49,7 +49,7 @@
 			function loadNowPlaying(){
 			  $("section.widget").load("widcontent.php");
 			}
-			setInterval(function(){loadNowPlaying()}, 10000);
+			setInterval(function(){loadNowPlaying()}, 900000);
 		</script>
 
 		<script>
