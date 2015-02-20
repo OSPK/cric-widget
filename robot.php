@@ -10,7 +10,7 @@ if (isset($_GET['write'])=='go') {
 	$json = file_get_contents($url);
 	$obj = json_decode($json);
 
-	$file = fopen("data/matches.json","w");
+	$file = fopen('data/matches.json','w');
 	echo fputs($file,$json);
 	echo '<br>'. $file;
 	fclose($file);
@@ -22,7 +22,7 @@ if (isset($_GET['write'])=='go') {
 	$url_m = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20cricket.scorecard.live.summary&format=json&env=store%3A%2F%2F0TxIGQMQbObzvU4Apia0V0&callback=";
 	$json_m = file_get_contents($url_m);
 	$obj_m = json_decode($json_m);
-	$filename = "data/live.json";
+	$filename = 'data/live.json';
 	$file_m = fopen($filename,"w");
 	echo fputs($file_m,$json_m);
 	echo '<br>'. $file_m;
@@ -34,7 +34,7 @@ if (isset($_GET['write'])=='go') {
 	$url_m = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20cricket.scorecard.live&format=json&env=store%3A%2F%2F0TxIGQMQbObzvU4Apia0V0&callback=";
 	$json_m = file_get_contents($url_m);
 	$obj_m = json_decode($json_m);
-	$filename = "data/livedetail.json";
+	$filename = 'data/livedetail.json';
 	$file_m = fopen($filename,"w");
 	echo fputs($file_m,$json_m);
 	echo '<br>'. $file_m;
