@@ -12,9 +12,9 @@ if (isset($_GET['write'])=='go') {
 
 	$file = fopen("data/matches.json","w");
 	echo fwrite($file,$json);
+	echo '<br>'. $file;
 	fclose($file);
-	echo "<br>Written to matches.json: <br><pre>";
-	print_r($obj); echo "</pre><br><br>";
+	echo "</pre><br><br>";
 					
 	echo "======================================================<br>==============<br>=======";
 	
@@ -25,9 +25,9 @@ if (isset($_GET['write'])=='go') {
 	$filename = "data/live.json";
 	$file_m = fopen($filename,"w");
 	echo fwrite($file_m,$json_m);
+	echo '<br>'. $file_m;
 	fclose($file_m);
-	echo "<br>Written to live.json: <br><pre>";
-	print_r($obj_m); echo "</pre><br><br>";
+	echo "</pre><br><br>";
 
 	echo "=======================<br>==============<br>=======";
 
@@ -37,9 +37,9 @@ if (isset($_GET['write'])=='go') {
 	$filename = "data/livedetail.json";
 	$file_m = fopen($filename,"w");
 	echo fwrite($file_m,$json_m);
+	echo '<br>'. $file_m;
 	fclose($file_m);
-	echo "<br>Written to livedetail.json: <br><pre>";
-	print_r($obj_m); echo "</pre><br><br>";
+	echo "</pre><br><br>";
 
 	echo "ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS 
 	ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS ENDS 
