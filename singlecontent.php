@@ -16,7 +16,7 @@
 					$result = $scores->result;
 
 					$a_team = $scores->teams[1];
-					$b_team = $scores->teams[0;
+					$b_team = $scores->teams[0];
 
 					$a_id = $a_team->i;
 					$b_id = $b_team->i;
