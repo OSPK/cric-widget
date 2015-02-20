@@ -11,7 +11,7 @@ if (isset($_GET['write'])=='go') {
 	$obj = json_decode($json);
 
 	$file = fopen("data/matches.json","w");
-	echo fwrite($file,$json);
+	echo fputs($file,$json);
 	echo '<br>'. $file;
 	fclose($file);
 	echo "</pre><br><br>";
@@ -24,7 +24,7 @@ if (isset($_GET['write'])=='go') {
 	$obj_m = json_decode($json_m);
 	$filename = "data/live.json";
 	$file_m = fopen($filename,"w");
-	echo fwrite($file_m,$json_m);
+	echo fputs($file_m,$json_m);
 	echo '<br>'. $file_m;
 	fclose($file_m);
 	echo "</pre><br><br>";
@@ -36,7 +36,7 @@ if (isset($_GET['write'])=='go') {
 	$obj_m = json_decode($json_m);
 	$filename = "data/livedetail.json";
 	$file_m = fopen($filename,"w");
-	echo fwrite($file_m,$json_m);
+	echo fputs($file_m,$json_m);
 	echo '<br>'. $file_m;
 	fclose($file_m);
 	echo "</pre><br><br>";
