@@ -252,12 +252,12 @@ position: relative;
 padding: 7px 20px 7px 20px;
 background-color: #016F3A;
 color: white;
-width: 500px;
+width: 550px;
 box-shadow: -1px 2px 3px rgba(74, 74, 74, 0.44);
 z-index: 2;
 }
 section.pointswidget {
-width: 500px;
+width: 550px;
 height: 219px;
 background-color: #E9F4E4;
 border-radius: 2px;
