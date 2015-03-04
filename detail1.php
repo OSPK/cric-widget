@@ -45,7 +45,7 @@
 
 		<script type="text/javascript" language="javascript">
 			function loadNowPlaying(){
-			  $("section.details").load("detailcontent.php");
+			  $("section.details").load("detailcontent1.php");
 			}
 			setInterval(function(){loadNowPlaying()}, 10000);
 		</script>
