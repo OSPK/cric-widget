@@ -18,7 +18,7 @@ include_once "summary_class.php";
 
 				$scoreses = $obj->query->results->Scorecard;
 
-				$scoreses = array_reverse($scoreses);
+				//$scoreses = array_reverse($scoreses);
 
 				foreach ($scoreses as $scores) {
 
