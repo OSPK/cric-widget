@@ -289,6 +289,10 @@ tr:nth-child(2n) {
 	background-color: #cecece;
 	background-color: rgba(255,255,255,0.8);
 }
+
+table {
+	background: rgba(255,255,255,0.4);
+}
 table td:nth-child(3) {
 	color:green;
 	font-weight: bold;
@@ -300,6 +304,21 @@ table td:nth-child(4) {
 table td:nth-child(5) {
 	padding-left:12px;
 }
+
+td.team_name {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.panel-collapse {
+  padding: 5px 10px;
+  font-size: 0.7em;
+  font-weight: bold;
+  background: rgba(0,0,0,0);
+}
+.panel-collapse table td {
+  font-weight: normal;
+}
+
 
 @media (max-width: 490px) {
   .dism {
