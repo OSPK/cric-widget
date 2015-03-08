@@ -22,10 +22,13 @@ function match_content() {
 
 		match_form();
 		echo "<br>";
-		foreach ($obj as $match) {
-			echo "<h1 class='title'>$match->si</h1><br>";
-			echo "<h2 class='score'>$match->de</h2>";
-			echo "<a class='refresh' href='javascript:location.reload(true)'><img width='30px' src='/assets/reload.png'><strong>Refresh</strong></a>";
+
+		if (is_array($obj)) {
+			foreach ($obj as $match) {
+				echo "<h1 class='title'>$match->si</h1><br>";
+				echo "<h2 class='score'>$match->de</h2>";
+				echo "<a class='refresh' href='javascript:location.reload(true)'><img width='30px' src='/assets/reload.png'><strong>Refresh</strong></a>";
+			}
 		}
 	}
 }
@@ -41,11 +44,13 @@ function match_form() {
 
 	echo "<form action='/' method='GET' role='form'>";
 	echo "<div class='styled-select'><select onchange='this.form.submit()'' name='id'>";
-	foreach ($obj as $match) {
-		echo "<span class='hidden'>" . $match->id . "</span>";
-		echo "<option value='$match->id'";
-		if ($match->id==$matchid) {echo "selected";}
-		echo ">" . $match->t1 . " vs " . $match->t2. "</option>";
+	if (is_array($obj)) {
+		foreach ($obj as $match) {
+			echo "<span class='hidden'>" . $match->id . "</span>";
+			echo "<option value='$match->id'";
+			if ($match->id==$matchid) {echo "selected";}
+			echo ">" . $match->t1 . " vs " . $match->t2. "</option>";
+		}
 	}
 	echo "</select></div></form>";
 }
