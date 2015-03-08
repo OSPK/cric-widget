@@ -77,33 +77,40 @@
 						//PLAYERS
 						//TEAM A
 						$this->players_a = array();
-						foreach ($this->team_a->squad as $player) {
-							$pid = $player->i;
-							$this->players_a[$pid] = $player->short;
+						if (is_array($this->team_a->squad)) {
+							foreach ($this->team_a->squad as $player) {
+								$pid = $player->i;
+								$this->players_a[$pid] = $player->short;
+							}
 						}
 						//TEAM B
 						$this->players_b = array();
-						foreach ($this->team_b->squad as $player) {
-							$pid = $player->i;
-							$this->players_b[$pid] = $player->short;
+						if (is_array($this->team_b->squad)) {
+							foreach ($this->team_b->squad as $player) {
+								$pid = $player->i;
+								$this->players_b[$pid] = $player->short;
+							}
 						}
-
 						//SCORES
 						//TEAM A
 						$playerscores = $this->team_a_score->d->a->t;
 						$this->players_a_scores = array();
-						foreach ($playerscores as $playerscore) {
-							$psid = $playerscore->i;
-							$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
-							$this->players_a_scores[$psid] = $bat_score;
+						if (is_array($playerscores)) {
+							foreach ($playerscores as $playerscore) {
+								$psid = $playerscore->i;
+								$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
+								$this->players_a_scores[$psid] = $bat_score;
+							}
 						}
 						//TEAM B
 						$playerscores = $this->team_b_score->d->a->t;
 						$this->players_b_scores = array();
-						foreach ($playerscores as $playerscore) {
-							$psid = $playerscore->i;
-							$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
-							$this->players_b_scores[$psid] = $bat_score;
+						if (is_array($playerscores)) {
+							foreach ($playerscores as $playerscore) {
+								$psid = $playerscore->i;
+								$bat_score = "<strong>" . $playerscore->r . "</strong> (" . $playerscore->b . ") <span class='dism'>" . $playerscore->c . "</span>";
+								$this->players_b_scores[$psid] = $bat_score;
+							}
 						}
 
 					}
@@ -114,16 +121,20 @@
 					}
 
 					public function a_scores() {
-						foreach ($this->players_a_scores as $id => $score) {
-							echo "<div class='indv_scr'><span class='pname'>" . $this->players_a[$id] . '</span>';
-							echo ": <span class='pscore'>" . $score . "</span><br></div>";
+						if (is_array($this->players_a_scores)) {
+							foreach ($this->players_a_scores as $id => $score) {
+								echo "<div class='indv_scr'><span class='pname'>" . $this->players_a[$id] . '</span>';
+								echo ": <span class='pscore'>" . $score . "</span><br></div>";
+							}
 						}
 					}
 
 					public function b_scores() {
-						foreach ($this->players_b_scores as $id => $score) {
-							echo "<div class='indv_scr'><span class='pname'>" . $this->players_b[$id] . '</span>';
-							echo ": <span class='pscore'>" . $score . "</span><br></div>";
+						if (is_array($this->players_b_scores)) {
+							foreach ($this->players_b_scores as $id => $score) {
+								echo "<div class='indv_scr'><span class='pname'>" . $this->players_b[$id] . '</span>';
+								echo ": <span class='pscore'>" . $score . "</span><br></div>";
+							}
 						}
 					}
 
