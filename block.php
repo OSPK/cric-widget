@@ -24,14 +24,15 @@ $range1 = '119.160.116.0/22';
 $range2 = '119.160.64.0/20';
 
 echo "Your IP:" . $ip ."<br><br>";
-
-
-if ( ip_in_range( $ip, $range1 ) || ip_in_range( $ip, $range2 ) ) {
-	echo "You are Mobilink";
-}
-
-else {
-	echo "You are NOT Mobilink";
-}
-
+//-----------------------------------------------------------------------------------------------------
 ?>
+
+<?php if ( !ip_in_range( $ip, $range1 ) || !ip_in_range( $ip, $range2 ) ) { ?>
+
+	<p>You are NOT on Mobilink so you see this line.</p>
+
+<?php } else { ?>
+
+	<p>You are on Mobilink like a boss.</p>
+
+<?php } ?>
