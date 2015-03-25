@@ -24,15 +24,18 @@ $range1 = '119.160.116.0/22';
 $range2 = '119.160.64.0/20';
 
 echo "Your IP:" . $ip ."<br><br>";
+// Just include the above php code where you're putting your functions.
 //-----------------------------------------------------------------------------------------------------
 ?>
 
-<?php if ( !ip_in_range( $ip, $range1 ) || !ip_in_range( $ip, $range2 ) ) { ?>
+<?php if ( !(ip_in_range( $ip, $range1 ) || ip_in_range( $ip, $range2 )) ) { ?>
 
 	<p>You are NOT on Mobilink so you see this line.</p>
+	<p>THIS IS WHERE WE PUT EMBED CODES</p>
 
 <?php } else { ?>
 
 	<p>You are on Mobilink like a boss.</p>
+	<p>Don't have to show anything here</p>
 
 <?php } ?>
